@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ceci est une pâle imitation du célèbre Eventbrite. Pour le voir en ligne, rdv sur Heroku 
+===> https://eventbite-tls.herokuapp.com/ <===
 
-Things you may want to cover:
+Si tu veux parcourir le code, il te faudra :
 
-* Ruby version
+* Ruby version 2.5.x 
 
-* System dependencies
+* Rails 5.2.x
 
-* Configuration
+* Un petit clone du repo : $ git clone https://github.com/theamymachine/eventbriteamy.git
 
-* Database creation
+* Créer une database avec $ rails db:create, puis l'initialiser avec un $ rails db:migrate
 
-* Database initialization
+* Décommenter les seeds à vos risques et périls, ou créer vos propres événements grace à la $ rails console ou $ rails server 
 
-* How to run the test suite
+* L'adresse pour le navigateur devrait être à localhost:3000/  (essayer localhost:3000/events si ça ne charge pas)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bon courage ! 

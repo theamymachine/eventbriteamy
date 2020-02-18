@@ -32,6 +32,7 @@ gem 'devise'
 gem "better_errors"
 gem "binding_of_caller"
 gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -9,7 +9,7 @@
            <%= text_field_tag 'title', @event.title, class:"form-control", placeholder: "Titre" %>
            <br>
            <%= text_area_tag 'description', @event.description, class:"form-control", placeholder: "Description"  %><br>
-           <%= text_area_tag 'start_date', @event.start_date, class:"form-control", placeholder: "Date"  %><br>
+           <%= text_field_tag 'start_date', @event.start_date, class:"form-control", placeholder: "Date (00/00/00)" %> <br>
            <%= text_area_tag 'duration', @event.duration, class:"form-control", placeholder: "Durée"  %><br>
            <%= text_area_tag 'location', @event.location, class:"form-control", placeholder: "Lieu"  %><br>
            <%= text_area_tag 'price', @event.price, class:"form-control", placeholder: "Prix"  %><br>

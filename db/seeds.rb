@@ -8,7 +8,7 @@
 
 require 'faker'
 
-yopmail_array = ["mabite@yopmail.com", "thptoulouse@yopmail.com", "monsieurX@yopmail.com", "Salutmabite@yopmail.com", "jaimemabite@yopmail.com"]
+#yopmail_array = ["mabite@yopmail.com", "thptoulouse@yopmail.com", "monsieurX@yopmail.com", "Salutmabite@yopmail.com", "jaimemabite@yopmail.com"]
 
 #5.times{
   #User.create!(first_name: Faker::FunnyName.name, #last_name: Faker::FunnyName.name, email: yopmail_array.#sample, description: #Faker::Movies::HitchhikersGuideToTheGalaxy.quote)

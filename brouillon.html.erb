@@ -1,24 +1,63 @@
-	
-		<!-- <div class="dropdown-menu bg-light">
-    <% if logged_in? %>
-       
-         <li class="nav-item">
-           <%= link_to "#{current_user.first_name}", user_path(current_user.id), class:"nav-link text-primary text-uppercase"%>
-         </li>
-         <li class="nav-item">
-           <%= link_to "Se déconnecter", session_path(session.id), class:"nav-link text-danger", method: :delete %>
-         </li>
-       
-         <% else %>
-       
-         <li class="nav-item">
-           <%= link_to "Se connecter", new_session_path, class: "nav-link text-primary"%>
-         </li>
-         <li class="nav-item">
-           <%= link_to "S'inscrire", new_user_path, class: "nav-link text-success"%>
-         </li>
-       
-         <% end %> 
- </div> --> 
+<div class="col-sm-6">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
 
- 
+<div class="album py-5 container">
+  <div class="row">
+    <br>
+  <div class="text-center mt-3 ">
+
+<br>
+  <div class="card bg-light">
+      <div class="card-body text-center">
+
+            <h5 class="card-title border-bottom "> Titre : <%= event.title %> </h5> <br>
+            <h6 class="card-subtitle font-weight-bold"> Commence le : <%= event.start_date.strftime('%d-%m-%Y') %> </h6> <br>
+            <h6 class="card-subtitle font-weight-bold">Durée : <%= event.duration %> minutes </h6> <br> 
+            <h6 class="card-subtitle font-weight-bold">Description : <%= event.description %></h6> <br>
+            <h6 class="card-subtitle font-weight-bold">Prix : <%= event.price %> </h6><br>
+            <h6 class="card-subtitle font-weight-bold">Lieux : <%= event.location %> </h6> <br>
+            <h6 class="card-subtitle font-weight-bold">Crée par : <%= event.user.first_name %> <%= event.user.last_name %> </h6>
+            <br><br>
+          <br>
+        </div>
+        <br>
+      </div>
+      <br>
+    </div>
+    <br>
+  </div>
+  <br>
+</div>
+<br>
+<%end%>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+      <div class="card-body">
+        <h5 class="card-title">Titre : </h5>
+        <p class="card-text"><%= event.title %></p>
+        <h6 class="card-subtitle">Commence le : </h6>
+        <p class="card-text"><%= event.start_date %></p>
+        <h6 class="card-subtitle">Durée : </h6>
+        <p class="card-text"><%= event.duration %> minutes </p>
+        <h6 class="card-subtitle">Description :</h6>
+        <p class="card-text"><%= event.description %></p>
+        <h6 class="card-subtitle">Prix : </h6>
+        <p class="card-text"><%= event.price %> euros</p>
+        <h6 class="card-subtitle">Lieu : </h6>
+        <p class="card-text"><%= event.location %></p>
+        <h6 class="card-subtitle">Créé par : </h6>
+        <p class="card-text"> <%= event.user.first_name %> <%= event.user.last_name %></p>
+      </div>
+    </div>
+  <%end%>
+</div>

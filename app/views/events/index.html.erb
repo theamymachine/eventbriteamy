@@ -16,20 +16,14 @@
 <div class="col-sm-4">
       <div class="card-body text-center" style="border-radius: 10px; border: solid; border-width: 1px; border-color: aquamarine; background-color: rgb(189, 235, 245); margin: 10px; padding: 10px;">
         <h5 class="card-title">Titre : <%= event.title %></h5>
-        <h6 class="card-subtitle">Commence le : </h6>
+        <h6 class="card-subtitle"> le </h6>
         <p class="card-text"><%= event.start_date.strftime('%d-%m-%Y') %></p>
-        <h6 class="card-subtitle">Durée : </h6>
-        <p class="card-text"><%= event.duration %> minutes </p>
+        <h6 class="card-subtitle"> à </h6>
+        <p class="card-text"><%= event.location %></p>
         <h6 class="card-subtitle">Description :</h6>
         <p class="card-text"><%= event.description %></p>
-        <h6 class="card-subtitle">Prix : </h6>
-        <p class="card-text"><%= event.price %> euros</p>
-        <h6 class="card-subtitle">Lieu : </h6>
-        <p class="card-text"><%= event.location %></p>
-        <h6 class="card-subtitle">Créé par : </h6>
-        <p class="card-text"> <%= event.user.first_name %> <%= event.user.last_name %></p>
         <p class="card-text"> 
-        <%= button_to "Participer", new_attendance_path, class: 'float-center btn btn-secondary', method: 'get' %></p>
+        <%= button_to "Plus d'infos", event_path(event.id), class: 'float-center btn btn-secondary', method: 'get' %></p>
       </div>
     </div>
   <%end%>

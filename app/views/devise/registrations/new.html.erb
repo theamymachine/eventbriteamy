@@ -5,6 +5,16 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "float-left btn btn-primary") do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="field">
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", placeholder: 'Prénom' %>
+            <br>
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", placeholder: 'Nom' %>
+            <br>
+          </div>
+          <div class="area">
+            <%= f.text_field :description, autofocus: true, autocomplete: "description", class: "form-control", placeholder: 'Quelques mots qui te décrivent' %>
+            <br>
+          </div>
+          <div class="field">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: 'Email' %>
           </div>
           <br>
