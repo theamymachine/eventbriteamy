@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="">
+  <div class="ml-4 mt-4 mb-4">
+      <div class="card bg-light flex-row flex-wrap" style="width: 600px;">
+        <div class="card-header border-0 bg-light">
+            <img class="card-img-top img-thumbnail" src="https://images.pexels.com/photos/1446948/pexels-photo-1446948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200" alt="Card image cap">
+        </div>
+      <div class="bg-light">
+          <br/><br/>
+          <h5 class="card-title font-weight-bold"><%= @user.first_name%> <%= @user.last_name%></h5>
+            <br>
+            <p class="card-text text-body"><strong>Email :</strong> <%= @user.email %></p>
+            <p class="card-text text-body"><strong>Description :</strong> <%= @user.description %></p>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+  
+  

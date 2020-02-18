@@ -36,8 +36,10 @@
                 <% if user_signed_in? %>
                     <%= current_user.first_name %>
                     <%= link_to "Modif email ou mot de passe", edit_user_registration_path, class: 'dropdown-item'  %>
-                    <div class="dropdown-divider"></div>
-                        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                    <%= current_user.first_name %>
+                    <%= link_to "Voir profil", user_path(current_user.id), class: 'dropdown-item' %>
+                  <div class="dropdown-divider"></div>
+                      <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                     </div>
                 <% else %>
                     <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item'  %>
