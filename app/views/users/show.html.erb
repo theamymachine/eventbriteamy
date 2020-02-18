@@ -11,6 +11,9 @@
             <br>
             <p class="card-text text-body"><strong>Email :</strong> <%= @user.email %></p>
             <p class="card-text text-body"><strong>Description :</strong> <%= @user.description %></p>
+
+            <%= link_to "Modifier l'utilisateur", edit_user_path, class: "btn btn-success btn-lg"%>
+
           </div>
       </div>
   </div>
