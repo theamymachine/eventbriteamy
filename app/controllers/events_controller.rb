@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
+  
+  before_action :authenticate_user!, only: [:new]
+
   def new
     @event = Event.new
   end
+
   def create
     @event = Event.new(title: params[:title], user_id: current_user.id , description: params[:description], location: params[:location], duration: params[:duration], start_date: params[:start_date], price: params[:price])
     if @event.save
@@ -28,4 +32,12 @@ class EventsController < ApplicationController
   def delete
   end
   
+  private 
+
+  def user_params
+
+    params.require(:event).permit(:title, :user_id, :description, :location, :duration, :start_date, :price)
+
+  end
+
 end

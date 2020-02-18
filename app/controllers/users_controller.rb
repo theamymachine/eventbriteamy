@@ -32,9 +32,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path notice: "Votre profil a été mis à jour"
+      redirect_to user_path, 
+      notice: "Votre profil a été mis à jour"
     else 
-      render events_path 
+      render :new,
+      notice: "Il y a une erreur, recommence"
     end
 
   end
