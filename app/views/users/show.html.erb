@@ -4,19 +4,20 @@
         <div class="card-header border-0 bg-light">
             <img class="card-img-top img-thumbnail" src="https://images.pexels.com/photos/1446948/pexels-photo-1446948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200" alt="Card image cap">
         </div>
-      <div class="bg-light">
-            <div class="actions">
-            <br>
-            <% current_user.first_name == nil || current_user.last_name == nil || current_user.description == nil %>
-            <%= button_to "Mettre à jour vos informations", edit_user_path, class: 'float-right btn btn-success', method: 'get' %>
-            <br>
-            <%= button_to "Modifier email/mot de passe", edit_user_registration_path, class: 'float-right btn btn-secondary', method: 'get' %>
-            </div>
-          <br/><br/>
           <h5 class="card-title font-weight-bold"><%= @user.first_name%> <%= @user.last_name%></h5>
             <br>
             <p class="card-text text-body"><strong>Email :</strong> <%= @user.email %></p>
             <p class="card-text text-body"><strong>Description :</strong> <%= @user.description %></p>
+            <div class="bg-light">
+              <div class="actions">
+              <br>
+              <% current_user.first_name == nil || current_user.last_name == nil || current_user.description == nil %>
+              <%= button_to "Mettre à jour vos informations", edit_user_path, class: 'float-left btn btn-success', method: 'get' %>
+              <br>
+              <br>
+              <%= button_to "Modifier email/mot de passe", edit_user_registration_path, class: 'float-right btn btn-secondary', method: 'get' %>
+              </div>
+            <br/><br/>
           </div>
       </div>
   </div>

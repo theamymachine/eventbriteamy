@@ -15,7 +15,7 @@
 <% @events.each do |event| %>
 <div class="col-sm-4">
       <div class="card-body text-center" style="border-radius: 10px; border: solid; border-width: 1px; border-color: aquamarine; background-color: rgb(189, 235, 245); margin: 10px; padding: 10px;">
-        <h5 class="card-title">Titre : <%= event.title %></h5>
+        <h5 class="card-title"><%= event.title %></h5>
         <h6 class="card-subtitle"> le </h6>
         <p class="card-text"><%= event.start_date.strftime('%d-%m-%Y') %></p>
         <h6 class="card-subtitle"> à </h6>
