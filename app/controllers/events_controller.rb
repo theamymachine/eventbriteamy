@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    if current_user 
   end
 
   def index
