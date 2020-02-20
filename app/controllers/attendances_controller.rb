@@ -1,13 +1,18 @@
 class AttendancesController < ApplicationController
   def new
-    #@user = User.find(params[:id])
-    #if current_user.id != @user.id
-     # redirect_to events_path
-    #else
-    #end
+    @amount = (Event.find(params[:event_id]).price)*100
+    @event = Event.find(params[:event_id])
   end
 
   def create
+    @event = Event.find(params[:event_id])
+    @attendance = Attendance.new(event_id: @event.id, user_id: current_user.id)
+    if @attendance.save
+      redirect_to events_path, notice: "Vous participez à un évènement."
+    else
+      render :new
+      flash.alert = "Il y a un problème, recommence"
+    end
   end
 
   def show

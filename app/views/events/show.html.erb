@@ -15,7 +15,7 @@
           <h6 class="card-subtitle">Créé par : </h6>
           <p class="card-text"> <%= @event.user.first_name %> <%= @event.user.last_name %></p>
           <p class="card-text"> 
-          <%= button_to "Participer", new_attendance_path, class: 'float-center btn btn-secondary', method: 'get' %></p>
+          <%= button_to "Participer", new_event_attendance_path(params[:id]), class: 'float-center btn btn-secondary', method: 'get' %></p>
         </div>
       </div>
     </div>

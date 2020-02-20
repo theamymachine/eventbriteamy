@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if current_user 
   end
+end
 
   def index
     @events = Event.all
@@ -37,9 +38,7 @@ class EventsController < ApplicationController
   private 
 
   def user_params
-
     params.require(:event).permit(:title, :user_id, :description, :location, :duration, :start_date, :price)
-
   end
 
 end
