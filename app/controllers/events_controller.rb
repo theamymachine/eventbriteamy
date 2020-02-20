@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   
   before_action :authenticate_user!, only: [:new]
+  before_action :admin?, only: [:edit]
 
   def new
     @event = Event.new
@@ -27,18 +28,40 @@ end
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to event_path, 
+      notice: "Votre profil a été mis à jour"
+    else 
+      render :new,
+      notice: "Il y a une erreur, recommence"
+    end
   end
 
-  def delete
+  def destroy
+    @event = Event.find(params[:id])
+      if @event.destroy
+        redirect_to events_path notice: "Evénement supprimé"
+  
+      else
+        render :edit
+        flash.alert = "Il y a un problème, recommence"
+      end
   end
   
   private 
 
-  def user_params
+  def event_params
     params.require(:event).permit(:title, :user_id, :description, :location, :duration, :start_date, :price)
   end
 
+  def admin?
+    if current_user.id != (Event.find(params[:id])).user_id
+      render 'events/index'
+    end
+  end 
 end

@@ -14,8 +14,15 @@
           <p class="card-text"><%= @event.location %></p>
           <h6 class="card-subtitle">Créé par : </h6>
           <p class="card-text"> <%= @event.user.first_name %> <%= @event.user.last_name %></p>
-          <p class="card-text"> 
-          <%= button_to "Participer", new_event_attendance_path(params[:id]), class: 'float-center btn btn-secondary', method: 'get' %></p>
+
+          <% if Attendance.where(user_id: current_user.id, event_id: params[:id]).count > 0  %>
+          <p>Tu participes deja à cette sortie</p>
+        <% elsif Event.where(user_id: current_user.id, id: params[:id]).count > 0 %>
+          <%= button_to "Mon espace évènement", event_attendances_path(params[:id]), class: 'float-center btn btn-secondary', method: 'get' %>
+        <% else %>
+          <%= button_to "Participer", new_event_attendance_path(params[:id]), class: 'float-center btn btn-secondary', method: 'get' %>
+        <% end %>
         </div>
       </div>
     </div>
+

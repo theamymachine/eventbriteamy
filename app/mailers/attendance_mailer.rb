@@ -1,11 +1,13 @@
 class AttendanceMailer < ApplicationMailer
-  default from: 'tiptip@yopmail.com'
-  def confirmation_email(attendance)
+  default from: 'no-reply@monsite.fr'
+  def confirmation(attendance)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @attendance = attendance
+    @user = attendance.user
+
     #on définit une variable @url qu'on utilisera dans la view d'e-mail
-    @url  = 'https://eventbite-tls.herokuapp.com/' 
+    @url  = 'https://eventbrite-thp-toulouse.herokuapp.com/'
     # c'est cet appel à mail() qui permet d'envoyer l'e-mail en définissant destinataire et sujet.
-    mail(to: @attendance.event.user.email, subject: 'Confirmation de participation à l\'événement') 
+    mail(to: @attendance.event.user.email, subject: 'Event confirmé !')
   end
 end
