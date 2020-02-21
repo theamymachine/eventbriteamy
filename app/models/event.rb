@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   has_many :attendances
   belongs_to :user
+
+  has_one_attached :event_image
+
   validate :event_must_be_future
   validate :duration_must_be_times_five
 
